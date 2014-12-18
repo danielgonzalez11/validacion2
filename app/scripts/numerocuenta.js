@@ -1,6 +1,7 @@
 	/*numerodecuenta es el valor introducido por el usuario, y para el que se va a comprobar si es válido.
     Retornaremos true o false según corresponda */
-    
+    $.validator.addMethod("iban", function(numerodecuenta, element) {
+ 
     var banco = numerodecuenta.substring(0,4);
     var sucursal = numerodecuenta.substring(4,8);
     var dc = numerodecuenta.substring(8,10);
@@ -34,3 +35,4 @@
         }
         return true;
     }
+}, "Escriba un IBAN correcto");
